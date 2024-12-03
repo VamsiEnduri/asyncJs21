@@ -57,41 +57,41 @@
 // // console.log(z);
 
 
-// var a = new Promise((x, y) => {
-//     if (1) {
-//         x("prodcut ordered !!!")
-//     } else {
-//         y("reject")
-//     }
-// })
+var a = new Promise((x, y) => {
+    if (1) {
+        x("prodcut ordered !!!")
+    } else {
+        y("reject")
+    }
+})
 
 
-// var b = new Promise((x, y) => {
-//     if (1) {
-//         x("shiiped")
-//     } else {
-//         y("reject")
-//     }
-// })
+var b = new Promise((x, y) => {
+    if (1) {
+        x("shiiped")
+    } else {
+        y("reject")
+    }
+})
 
 
-// var c = new Promise((x, y) => {
-//     if (1) {
-//         x("delivery partner")
-//     } else {
-//         y("reject")
-//     }
-// })
+var c = new Promise((x, y) => {
+    if (1) {
+        x("delivery partner")
+    } else {
+        y("reject")
+    }
+})
 
 
 
-// var d = new Promise((x, y) => {
-//     if (1) {
-//         x("order received!!!!")
-//     } else {
-//         y("reject")
-//     }
-// })
+var d = new Promise((x, y) => {
+    if (1) {
+        y("order received!!!!")
+    } else {
+        x("reject")
+    }
+})
 
 
 // a.then((res) => {
@@ -108,30 +108,45 @@
 // })
 
 
-//     .catch(err => {
-//         console.log(err)
-//     })
+a.then((res)=>{
+  console.log(res)
+  return b;
+}).then((res)=>{
+  console.log(res);
+  return c;
+}).then(res=>{
+  console.log(res);
+  return d;
+}).then(res=>{
+  console.log(res)
+})
+.catch(err => {
+    console.log(err)
+})
 
 
 
 
 // location.reload()
-function checkDeviceAccess() {
-    const form = document.getElementById('job-application');
-    const warning = document.getElementById('warning');
+// function checkDeviceAccess() {
+//     const form = document.getElementById('job-application');
+//     const warning = document.getElementById('warning');
 
-    if (window.innerWidth >= 1024) {
-      
-      form.style.display = 'block';
-      warning.style.display = 'none';
-    } else {
-      form.style.display = 'none';
-      warning.style.display = 'block';
-    }
-  }
+//     if (window.innerWidth >= 1024) {
 
-  
-  checkDeviceAccess();
+//       form.style.display = 'block';
+//       warning.style.display = 'none';
+//     } else {
+//       form.style.display = 'none';
+//       warning.style.display = 'block';
+//     }
+//   }
 
- 
-  window.addEventListener('resize', checkDeviceAccess);
+
+//   checkDeviceAccess();
+
+
+//   window.addEventListener('resize', checkDeviceAccess);
+
+
+
