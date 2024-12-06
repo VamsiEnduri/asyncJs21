@@ -46,29 +46,29 @@
 // getData()
 async function getData() {
         const data = await fetch("https://fakestoreapi.com/products")
-                .then(res => res.json())
+                .then(res => res)
 
-        for (i = 0; i < data.length; i++) {
-                let img = document.createElement("img");
-                img.src = `${data[i].image}`
-                console.log(img)
-                document.body.append(img)
+        // for (i = 0; i < data.length; i++) {
+        //         let img = document.createElement("img");
+        //         img.src = `${data[i].image}`
+        //         console.log(img)
+        //         document.body.append(img)
+        // }
+
+        if (data.ok) {
+                const res =await  data.json();
+                console.log(res);
+                
+
+                for (i = 0; i < res.length; i++) {
+                        let img = document.createElement("img");
+                        img.src = `${res[i].image}`
+                        // console.log(img)
+                        document.body.append(img)
+                }
+
         }
-        console.log(data);
-
-        //       if(data.ok){
-        //         const res=data.json()
-        //         const finalData=res.then(res=>res)
-        //         console.log(finalData);
-
-
-
-        //       }else{
-
-        //         console.error("not able to get the data cause of failed to fetch the api")
-
-        //       }
-
+        // console.log(data);
 }
 getData()
 
